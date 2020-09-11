@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "838129629320",
+    "firebase_url": "https://studentresourse-dbd11.firebaseio.com",
+    "project_id": "studentresourse-dbd11",
+    "storage_bucket": "studentresourse-dbd11.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:838129629320:android:8f0a9c9624d20c61b3073d",
+        "android_client_info": {
+          "package_name": "com.example.intoductionpart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "838129629320-ktdqnflc0ms1r92rm7hs3iee66dm683e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD72H7R6S9R7JrqSW_wROfid7O0oUQTdQc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "838129629320-ktdqnflc0ms1r92rm7hs3iee66dm683e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context=".Activities.RegisterActivity">
+
+
+    <ImageView
+        android:id="@+id/userimage"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/userphoto_signup_page_vali"
+
+        />
+
+
+    <EditText
+
+        android:id="@+id/name_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+
+        android:layout_marginRight="16dp"
+        android:background="@drawable/editback"
+        android:focusable="true"
+        android:hint="  Name"
+        android:padding="8dp"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/lightDarkBlack"
+        android:textColorHint="@color/tab_indicator_gray"
+        />
+
+
+    <EditText
+
+        android:id="@+id/email_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+
+        android:layout_marginRight="16dp"
+        android:background="@drawable/editback"
+        android:focusable="true"
+        android:hint="  Email"
+        android:padding="8dp"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/lightDarkBlack"
+        android:textColorHint="@color/tab_indicator_gray"
+        />
+
+
+
+    <EditText
+        android:id="@+id/password_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/editback"
+        android:hint="  Password"
+        android:fontFamily="sans-serif"
+
+        android:padding="8dp"
+        android:textColor="@color/lightDarkBlack"
+        android:textColorHint="@color/tab_indicator_gray"
+        />
+
+
+    <EditText
+        android:id="@+id/confirm_password_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/editback"
+        android:hint="  Confirm Password"
+        android:fontFamily="sans-serif"
+
+        android:padding="8dp"
+        android:textColor="@color/lightDarkBlack"
+        android:textColorHint="@color/tab_indicator_gray"
+        />
+    <Button
+        android:id="@+id/btn_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:fontFamily="sans-serif-medium"
+        android:background="@drawable/btn_gradient_style"
+        android:clickable="true"
+
+        android:gravity="center"
+        android:shadowColor="@android:color/darker_gray"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        android:text="Sign up"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btn_enter_as_guest"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:fontFamily="sans-serif-medium"
+        android:background="@drawable/btn_gradient_style"
+        android:clickable="true"
+
+        android:gravity="center"
+        android:shadowColor="@android:color/darker_gray"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        android:text="Enter As guest"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+
+
+</LinearLayout>
+
+
+
