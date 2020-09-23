@@ -12,11 +12,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".UserDetailsPage"></activity>
+        <activity android:name=".cart_place_helper" />
+        <activity
+            android:name=".add_to_cart"
+            android:label="Cart" />
+        <activity
+            android:name=".item_view_with_details"
+            android:label="Product detail"
+            android:parentActivityName=".item_display_place" />
+        <activity
+            android:name=".item_display_place"
+            android:label="Products"
+            android:parentActivityName=".Sign_up" />
         <activity
             android:name=".MainActivityNavigationDrawer"
             android:label="@string/title_activity_main_navigation_drawer"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:screenOrientation="portrait"
 
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Activities.RegisterActivity" />
         <activity android:name=".Sign_up" />
         <activity android:name=".Activities.HomeActivity" /> <!-- <activity android:name=".IntroActivity"> -->

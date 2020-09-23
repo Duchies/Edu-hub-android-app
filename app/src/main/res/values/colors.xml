@@ -8,6 +8,12 @@
 
     <!-- colors for button style -->
 
+
+    <color name="newBlue">#00b0ff</color>
+
+    <color name="duskyellow">#FFEB3B</color>
+    <color name="greenLight">#8BC34A</color>
+
     <color name="gradient_start_color">#4c84ff</color>
     <color name="gradient_end_color">#18a3fe</color>
 

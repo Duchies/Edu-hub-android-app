@@ -64,7 +64,7 @@ public class RegisterActivity extends AppCompatActivity {
         userPassword = findViewById(R.id.password_sign_up);
         userConfirmPassword = findViewById(R.id.confirm_password_sign_up);
         regBtn = findViewById(R.id.btn_sign_up);
-
+        //loadingProgress = findViewById(R.id.indeterminateBar);
         btnEnterasGuest = findViewById(R.id.btn_enter_as_guest);
 
         btnEnterasGuest.setOnClickListener(new View.OnClickListener() {
@@ -76,7 +76,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-        //  loadingProgress.setVisibility(View.INVISIBLE);
+      //   loadingProgress.setVisibility(View.INVISIBLE);
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -86,8 +86,8 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                //   regBtn.setVisibility(View.INVISIBLE);
-                // loadingProgress.setVisibility(View.VISIBLE);
+                  // regBtn.setVisibility(View.INVISIBLE);
+               //  loadingProgress.setVisibility(View.VISIBLE);
                 final String email = userEmail.getText().toString();
                 final String password = userPassword.getText().toString();
                 final String password2 = userConfirmPassword.getText().toString();
@@ -101,7 +101,7 @@ public class RegisterActivity extends AppCompatActivity {
                     // we need to display an error message
                     showMessage("Please Verify all fields");
                     //  regBtn.setVisibility(View.VISIBLE);
-                    //  loadingProgress.setVisibility(View.INVISIBLE);
+                   //  loadingProgress.setVisibility(View.INVISIBLE);
 
 
                 } else if (checkImg == false) {

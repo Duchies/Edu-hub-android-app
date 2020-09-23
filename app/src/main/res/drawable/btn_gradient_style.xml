@@ -9,8 +9,8 @@
 
 
 
-    <gradient android:startColor="@color/gradient_end_color"
-        android:endColor="@color/gradient_start_color" />
+    <gradient android:startColor="@color/newBlue"
+        android:endColor="@color/newBlue" />
 
 
 </shape>

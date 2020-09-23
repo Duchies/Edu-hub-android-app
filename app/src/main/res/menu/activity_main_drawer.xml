@@ -6,25 +6,44 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/nav_home"
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:onClick="UserDetailMethod"
+            android:icon="@drawable/nav_user"
+            android:title="User Detail"
+           />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:icon="@drawable/nav_envelope"
+            android:title="Contact Us "
+            android:onClick="ContactUs"
+            />
 
 
     </group>
+
+    <group
+        android:id="@+id/menu_bottom"
+        android:checkableBehavior="single">
+
+<!--    <item-->
+
+<!--        android:id="@+id/nav_share"-->
+<!--        android:title="Share App"-->
+<!--        android:onClick="shareApk"-->
+<!--        android:icon="@drawable/nav_shareoption"-->
+
+<!--        />-->
+
 
     <item
         android:id="@+id/nav_logout"
         android:title="@string/Logout"
         android:onClick="log_out_nav_operation"
-        android:icon="@drawable/ic_baseline_exit_to_app_24"
+        android:icon="@drawable/nav_logout"
         />
+    </group>
 
 </menu>

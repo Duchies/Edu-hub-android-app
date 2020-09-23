@@ -1,23 +1,31 @@
 package com.example.intoductionpart;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
+import com.example.intoductionpart.ui.gallery.GalleryFragment;
+import com.example.intoductionpart.ui.slideshow.SlideshowFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import androidx.annotation.NonNull;
+import androidx.core.view.GravityCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -29,12 +37,19 @@ import androidx.appcompat.widget.Toolbar;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivityNavigationDrawer extends AppCompatActivity {
+public class MainActivityNavigationDrawer extends AppCompatActivity  {
 
     private AppBarConfiguration mAppBarConfiguration;
 
     FirebaseUser currentUser ;
     FirebaseAuth mAuth;
+
+    TextView textCartItemCount,viewAll1,viewAll2,viewAll3;
+    int mCartItemCount = 0;
+
+    private DrawerLayout drawer;
+
+
 
 
     @Override
@@ -45,20 +60,44 @@ public class MainActivityNavigationDrawer extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
+//        final MenuItem menuItem =   findViewById(R.id.action_drawer_cart);
+//        View acionView= menuItem.getActionView();
+//
+//        TextView cartbadge_text_view  = acionView.findViewById(R.id.cart_badge_text_view);
+//        cartbadge_text_view.setText("5");
+
+//        acionView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                onOptionsItemSelected(menuItem);
+//            }
+//        });
+
+
+
         mAuth = FirebaseAuth.getInstance();
 
         currentUser =  mAuth.getCurrentUser();
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+//        FloatingActionButton fab = findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+////                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+////                        .setAction("Action", null).show();
+//                Intent ite = new Intent(getApplicationContext(),item_display_place.class);
+//                startActivity(ite);
+//
+//            }
+//        });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+
+
+
+
+
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -77,11 +116,11 @@ public class MainActivityNavigationDrawer extends AppCompatActivity {
         ImageSlider imageSlider  = (ImageSlider) findViewById(R.id.slider);
         List<SlideModel> slideModels  = new ArrayList<>();
 
-        slideModels.add(new SlideModel(R.drawable.banner2, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.banner4,ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.banner1,ScaleTypes.FIT));
+        slideModels.add(new SlideModel("https://raw.githubusercontent.com/Duchies/PhotoResources/master/banner2.png", ScaleTypes.FIT));
+        slideModels.add(new SlideModel("https://raw.githubusercontent.com/Duchies/PhotoResources/master/banner1.png",ScaleTypes.FIT));
+        slideModels.add(new SlideModel("https://raw.githubusercontent.com/Duchies/PhotoResources/master/banner6.jpg",ScaleTypes.FIT));
 //        slideModels.add(new SlideModel("https://rukminim1.flixcart.com/image/880/1056/jp5sknk0/backpack/3/x/e/hp0008-ezhp0008-laptop-backpack-hp-original-imafbgmyv4ymwbkb.jpeg?q=50","title 4",ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.banner3,ScaleTypes.FIT));
+        slideModels.add(new SlideModel("https://raw.githubusercontent.com/Duchies/PhotoResources/master/banner5.jpg",ScaleTypes.FIT));
 
 
 
@@ -93,12 +132,71 @@ public class MainActivityNavigationDrawer extends AppCompatActivity {
 
         // end image slider part
 
+
+
+        viewAll1 = findViewById(R.id.viewAll1);
+        viewAll2 = findViewById(R.id.viewAll2);
+        viewAll3 = findViewById(R.id.viewAll3);
+
+        viewAll1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                displayPlaceGoMethod();
+            }
+        });
+
+        viewAll2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                displayPlaceGoMethod();
+            }
+        });
+
+        viewAll3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                displayPlaceGoMethod();
+            }
+        });
+
+
     }
+
+    // text on click below is same
+
+    private void displayPlaceGoMethod() {
+
+        Intent intent = new Intent(this,item_display_place.class);
+        startActivity(intent);
+
+
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+       // getMenuInflater().inflate(R.menu.main_activity_navigation_drawer, menu);
+
+
         getMenuInflater().inflate(R.menu.main_activity_navigation_drawer, menu);
+
+        final MenuItem menuItem = menu.findItem(R.id.action_drawer_cart);
+
+        View actionView = menuItem.getActionView();
+        textCartItemCount = (TextView) actionView.findViewById(R.id.cart_badge_text_view);
+
+        setupBadge();
+
+        actionView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onOptionsItemSelected(menuItem);
+            }
+        });
+
+
+
         return true;
     }
 
@@ -139,4 +237,66 @@ public class MainActivityNavigationDrawer extends AppCompatActivity {
         finish();
 
     }
+
+
+    public void ContactUs(MenuItem item) {
+        Intent i=new Intent(android.content.Intent.ACTION_SEND);
+        i.setType("text/plain");
+        i.putExtra(android.content.Intent.EXTRA_SUBJECT,"Reason For Contact");
+        i.putExtra(android.content.Intent.EXTRA_TEXT, "text that you want to put");
+        startActivity(Intent.createChooser(i,"Share via"));
+
+    }
+    public void UserDetailMethod(MenuItem item) {
+
+        Intent intent  = new Intent(this,UserDetailsPage.class);
+        startActivity(intent);
+
+    }
+
+//
+//    public void viewAll() {
+//        Intent intent = new Intent(this,item_display_place.class);
+//        startActivity(intent);
+//    }
+
+    //@Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//
+//        return true;
+//    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+
+            case R.id.action_drawer_cart: {
+                // Do something
+                Intent intent = new Intent(this,add_to_cart.class);
+                startActivity(intent);
+
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void setupBadge() {
+
+        if (textCartItemCount != null) {
+            if (mCartItemCount == 0) {
+                if (textCartItemCount.getVisibility() != View.GONE) {
+                    textCartItemCount.setVisibility(View.GONE);
+                }
+            } else {
+                textCartItemCount.setText(String.valueOf(Math.min(mCartItemCount, 99)));
+                if (textCartItemCount.getVisibility() != View.VISIBLE) {
+                    textCartItemCount.setVisibility(View.VISIBLE);
+                }
+            }
+        }
+    }
+
+
 }

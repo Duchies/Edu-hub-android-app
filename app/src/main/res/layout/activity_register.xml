@@ -10,16 +10,47 @@
     tools:context=".Activities.RegisterActivity">
 
 
-    <ImageView
-        android:id="@+id/userimage"
-        android:layout_width="wrap_content"
+    <androidx.cardview.widget.CardView
+        android:layout_width="80dp"
         android:layout_height="80dp"
+        android:elevation="12dp"
+        android:id="@+id/view2"
+        app:cardCornerRadius="40dp"
+        android:layout_centerHorizontal="true"
+        android:innerRadius="0dp"
+        android:shape="ring"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="50dp"
-        android:src="@drawable/userphoto_signup_page_vali"
+        android:background="@color/colorAccent"
+        android:thicknessRatio="1.9"
+            >
 
-        />
+        <ImageView
+            android:id="@+id/userimage"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:padding="8dp"
+            android:src="@drawable/userphoto_signup_page_vali"
+
+            />
+
+
+    </androidx.cardview.widget.CardView>
+
+<!--    -->
+<!--    -->
+<!--    <ImageView-->
+<!--        android:id="@+id/userimage"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="80dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginTop="50dp"-->
+<!--        android:layout_marginBottom="50dp"-->
+<!--        android:src="@drawable/userphoto_signup_page_vali"-->
+
+<!--        />-->
 
 
     <EditText
@@ -29,13 +60,13 @@
         android:layout_height="50dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
-
+        android:nextFocusDown="@id/email_sign_up"
         android:layout_marginRight="16dp"
         android:background="@drawable/editback"
         android:focusable="true"
-        android:hint="  Name"
+        android:hint="Name"
         android:padding="8dp"
-        android:fontFamily="sans-serif"
+        android:fontFamily="@font/montserrat_regular"
         android:textColor="@color/lightDarkBlack"
         android:textColorHint="@color/tab_indicator_gray"
         />
@@ -48,13 +79,13 @@
         android:layout_height="50dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-
+        android:nextFocusDown="@id/password_sign_up"
         android:layout_marginRight="16dp"
         android:background="@drawable/editback"
         android:focusable="true"
-        android:hint="  Email"
+        android:hint="Email"
         android:padding="8dp"
-        android:fontFamily="sans-serif"
+        android:fontFamily="@font/montserrat_regular"
         android:textColor="@color/lightDarkBlack"
         android:textColorHint="@color/tab_indicator_gray"
         />
@@ -69,8 +100,10 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:background="@drawable/editback"
-        android:hint="  Password"
-        android:fontFamily="sans-serif"
+        android:hint="Password"
+        android:nextFocusDown="@id/confirm_password_sign_up"
+        android:fontFamily="@font/montserrat_regular"
+        android:inputType="textPassword"
 
         android:padding="8dp"
         android:textColor="@color/lightDarkBlack"
@@ -86,8 +119,9 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:background="@drawable/editback"
-        android:hint="  Confirm Password"
-        android:fontFamily="sans-serif"
+        android:hint="Confirm Password"
+        android:fontFamily="@font/montserrat_regular"
+        android:inputType="textPassword"
 
         android:padding="8dp"
         android:textColor="@color/lightDarkBlack"
@@ -101,7 +135,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:fontFamily="sans-serif-medium"
+        android:fontFamily="@font/montserrat_medium"
         android:background="@drawable/btn_gradient_style"
         android:clickable="true"
 
@@ -122,7 +156,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:fontFamily="sans-serif-medium"
+        android:fontFamily="@font/montserrat_medium"
         android:background="@drawable/btn_gradient_style"
         android:clickable="true"
 
@@ -134,6 +168,8 @@
         android:text="Enter As guest"
         android:textColor="@android:color/white"
         android:textSize="16sp" />
+
+
 
 
 

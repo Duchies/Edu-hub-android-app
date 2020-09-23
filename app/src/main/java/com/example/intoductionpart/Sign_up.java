@@ -38,7 +38,7 @@ public class Sign_up extends AppCompatActivity {
         login_username = findViewById(R.id.login_username);
         loin_password = findViewById(R.id.login_password);
         login_btn = findViewById(R.id.login_btn);
-        loginProgressBar = findViewById(R.id.progressBar);
+        loginProgressBar = findViewById(R.id.indeterminateBar);
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -50,7 +50,7 @@ public class Sign_up extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                loginProgressBar.setVisibility(View.VISIBLE);
+              //  loginProgressBar.setVisibility(View.VISIBLE);
 
                 final String mail = login_username.getText().toString();
                 final String password = loin_password.getText().toString();
@@ -58,7 +58,7 @@ public class Sign_up extends AppCompatActivity {
 
                 if (mail.isEmpty() || password.isEmpty()) {
                     showMessage("Please Verify Fields");
-                    loginProgressBar.setVisibility(View.INVISIBLE);
+                 //   loginProgressBar.setVisibility(View.INVISIBLE);
                 } else {
                     signIn(mail, password);
                 }
@@ -78,13 +78,13 @@ public class Sign_up extends AppCompatActivity {
 
                 if (task.isSuccessful()) {
 
-                    loginProgressBar.setVisibility(View.INVISIBLE);
+                  //  loginProgressBar.setVisibility(View.INVISIBLE);
                     updateUI();
 
                 } else {
                     showMessage(task.getException().getMessage());
 
-                    loginProgressBar.setVisibility(View.INVISIBLE);
+                  //  loginProgressBar.setVisibility(View.INVISIBLE);
                 }
 
 
@@ -125,5 +125,6 @@ public class Sign_up extends AppCompatActivity {
 
         Intent intent  = new Intent(this, RegisterActivity.class);
         startActivity(intent);
+
     }
 }
