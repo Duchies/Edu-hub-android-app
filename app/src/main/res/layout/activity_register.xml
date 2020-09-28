@@ -11,46 +11,45 @@
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/view2"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:elevation="12dp"
-        android:id="@+id/view2"
-        app:cardCornerRadius="40dp"
         android:layout_centerHorizontal="true"
-        android:innerRadius="0dp"
-        android:shape="ring"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="50dp"
         android:background="@color/colorAccent"
+        android:elevation="12dp"
+        android:innerRadius="0dp"
+        android:shape="ring"
         android:thicknessRatio="1.9"
-            >
+        app:cardCornerRadius="40dp">
 
         <ImageView
             android:id="@+id/userimage"
             android:layout_width="wrap_content"
             android:layout_height="80dp"
             android:layout_gravity="center"
-            android:padding="8dp"
-            android:src="@drawable/userphoto_signup_page_vali"
+            android:padding="5dp"
+            android:src="@drawable/adduser"
 
             />
 
 
     </androidx.cardview.widget.CardView>
 
-<!--    -->
-<!--    -->
-<!--    <ImageView-->
-<!--        android:id="@+id/userimage"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="80dp"-->
-<!--        android:layout_gravity="center"-->
-<!--        android:layout_marginTop="50dp"-->
-<!--        android:layout_marginBottom="50dp"-->
-<!--        android:src="@drawable/userphoto_signup_page_vali"-->
+    <!--    -->
+    <!--    -->
+    <!--    <ImageView-->
+    <!--        android:id="@+id/userimage"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="80dp"-->
+    <!--        android:layout_gravity="center"-->
+    <!--        android:layout_marginTop="50dp"-->
+    <!--        android:layout_marginBottom="50dp"-->
+    <!--        android:src="@drawable/userphoto_signup_page_vali"-->
 
-<!--        />-->
+    <!--        />-->
 
 
     <EditText
@@ -60,16 +59,15 @@
         android:layout_height="50dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
-        android:nextFocusDown="@id/email_sign_up"
         android:layout_marginRight="16dp"
         android:background="@drawable/editback"
         android:focusable="true"
-        android:hint="Name"
-        android:padding="8dp"
         android:fontFamily="@font/montserrat_regular"
+        android:hint="Name"
+        android:nextFocusDown="@id/email_sign_up"
+        android:padding="8dp"
         android:textColor="@color/lightDarkBlack"
-        android:textColorHint="@color/tab_indicator_gray"
-        />
+        android:textColorHint="@color/tab_indicator_gray" />
 
 
     <EditText
@@ -79,65 +77,62 @@
         android:layout_height="50dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:nextFocusDown="@id/password_sign_up"
         android:layout_marginRight="16dp"
         android:background="@drawable/editback"
         android:focusable="true"
-        android:hint="Email"
-        android:padding="8dp"
         android:fontFamily="@font/montserrat_regular"
+        android:hint="Email"
+        android:nextFocusDown="@id/password_sign_up"
+        android:padding="8dp"
         android:textColor="@color/lightDarkBlack"
-        android:textColorHint="@color/tab_indicator_gray"
-        />
-
+        android:textColorHint="@color/tab_indicator_gray" />
 
 
     <EditText
         android:id="@+id/password_sign_up"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
         android:layout_marginRight="16dp"
         android:background="@drawable/editback"
-        android:hint="Password"
-        android:nextFocusDown="@id/confirm_password_sign_up"
         android:fontFamily="@font/montserrat_regular"
+        android:hint="Password"
         android:inputType="textPassword"
+        android:nextFocusDown="@id/confirm_password_sign_up"
 
         android:padding="8dp"
         android:textColor="@color/lightDarkBlack"
-        android:textColorHint="@color/tab_indicator_gray"
-        />
+        android:textColorHint="@color/tab_indicator_gray" />
 
 
     <EditText
         android:id="@+id/confirm_password_sign_up"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
         android:layout_marginRight="16dp"
         android:background="@drawable/editback"
-        android:hint="Confirm Password"
         android:fontFamily="@font/montserrat_regular"
+        android:hint="Confirm Password"
         android:inputType="textPassword"
 
         android:padding="8dp"
         android:textColor="@color/lightDarkBlack"
-        android:textColorHint="@color/tab_indicator_gray"
-        />
+        android:textColorHint="@color/tab_indicator_gray" />
+
     <Button
         android:id="@+id/btn_sign_up"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:layout_marginTop="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
         android:layout_marginRight="16dp"
-        android:fontFamily="@font/montserrat_medium"
         android:background="@drawable/btn_gradient_style"
         android:clickable="true"
+        android:fontFamily="@font/montserrat_medium"
 
         android:gravity="center"
         android:shadowColor="@android:color/darker_gray"
@@ -148,29 +143,26 @@
         android:textColor="@android:color/white"
         android:textSize="16sp" />
 
-    <Button
-        android:id="@+id/btn_enter_as_guest"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:fontFamily="@font/montserrat_medium"
-        android:background="@drawable/btn_gradient_style"
-        android:clickable="true"
+<!--    <Button-->
+<!--        android:id="@+id/btn_enter_as_guest"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginLeft="16dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:layout_marginRight="16dp"-->
+<!--        android:background="@drawable/btn_gradient_style"-->
+<!--        android:clickable="true"-->
+<!--        android:fontFamily="@font/montserrat_medium"-->
 
-        android:gravity="center"
-        android:shadowColor="@android:color/darker_gray"
-        android:shadowDx="2"
-        android:shadowDy="2"
-        android:shadowRadius="5"
-        android:text="Enter As guest"
-        android:textColor="@android:color/white"
-        android:textSize="16sp" />
-
-
-
+<!--        android:gravity="center"-->
+<!--        android:shadowColor="@android:color/darker_gray"-->
+<!--        android:shadowDx="2"-->
+<!--        android:shadowDy="2"-->
+<!--        android:shadowRadius="5"-->
+<!--        android:text="Enter As guest"-->
+<!--        android:textColor="@android:color/white"-->
+<!--        android:textSize="16sp" />-->
 
 
 </LinearLayout>

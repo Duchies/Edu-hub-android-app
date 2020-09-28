@@ -30,10 +30,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.google.rpc.context.AttributeContext;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -65,16 +67,16 @@ public class RegisterActivity extends AppCompatActivity {
         userConfirmPassword = findViewById(R.id.confirm_password_sign_up);
         regBtn = findViewById(R.id.btn_sign_up);
         //loadingProgress = findViewById(R.id.indeterminateBar);
-        btnEnterasGuest = findViewById(R.id.btn_enter_as_guest);
-
-        btnEnterasGuest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(),MainActivityNavigationDrawer.class);
-                startActivity(i);
-                finish();
-            }
-        });
+//        btnEnterasGuest = findViewById(R.id.btn_enter_as_guest);
+//
+//        btnEnterasGuest.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(getApplicationContext(),MainActivityNavigationDrawer.class);
+//                startActivity(i);
+//                finish();
+//            }
+//        });
 
       //   loadingProgress.setVisibility(View.INVISIBLE);
 

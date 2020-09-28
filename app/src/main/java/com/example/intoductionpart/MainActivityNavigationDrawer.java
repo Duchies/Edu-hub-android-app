@@ -8,6 +8,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -50,8 +52,6 @@ public class MainActivityNavigationDrawer extends AppCompatActivity  {
     private DrawerLayout drawer;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,18 +60,8 @@ public class MainActivityNavigationDrawer extends AppCompatActivity  {
         setSupportActionBar(toolbar);
 
 
-//        final MenuItem menuItem =   findViewById(R.id.action_drawer_cart);
-//        View acionView= menuItem.getActionView();
 //
-//        TextView cartbadge_text_view  = acionView.findViewById(R.id.cart_badge_text_view);
-//        cartbadge_text_view.setText("5");
 
-//        acionView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                onOptionsItemSelected(menuItem);
-//            }
-//        });
 
 
 
@@ -92,6 +82,9 @@ public class MainActivityNavigationDrawer extends AppCompatActivity  {
 //        });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+
+
+
 
 
 
@@ -161,6 +154,8 @@ public class MainActivityNavigationDrawer extends AppCompatActivity  {
 
 
     }
+
+
 
     // text on click below is same
 
@@ -239,12 +234,14 @@ public class MainActivityNavigationDrawer extends AppCompatActivity  {
     }
 
 
+
+
     public void ContactUs(MenuItem item) {
         Intent i=new Intent(android.content.Intent.ACTION_SEND);
         i.setType("text/plain");
         i.putExtra(android.content.Intent.EXTRA_SUBJECT,"Reason For Contact");
         i.putExtra(android.content.Intent.EXTRA_TEXT, "text that you want to put");
-        startActivity(Intent.createChooser(i,"Share via"));
+        startActivity(Intent.createChooser(i,"Contact via"));
 
     }
     public void UserDetailMethod(MenuItem item) {
