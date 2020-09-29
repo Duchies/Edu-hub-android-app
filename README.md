@@ -17,7 +17,7 @@
                        uses shared preferences
 
  - sign in / sign up  -> by your email and by Google Account .it will ask to your name , email and photo for local side and with goole sign in just click 
-                        over your account
+                        over your account                 
  
  # images
  <img src="https://raw.githubusercontent.com/amankumar7017/amankumar7017.github.io/master/images/sr_pik1.png">
