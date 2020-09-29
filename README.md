@@ -21,3 +21,4 @@
  
  # images
  <img src="https://raw.githubusercontent.com/amankumar7017/amankumar7017.github.io/master/images/sr_pik1.png">
+ <img src="https://raw.githubusercontent.com/Duchies/PhotoResources/master/sr_pik3(data).png">
