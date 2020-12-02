@@ -42,7 +42,7 @@ import java.util.List;
 public class MainActivityNavigationDrawer extends AppCompatActivity  {
 
     private AppBarConfiguration mAppBarConfiguration;
-
+    add_to_cart add_to_cart_badge;
     FirebaseUser currentUser ;
     FirebaseAuth mAuth;
 
@@ -62,6 +62,7 @@ public class MainActivityNavigationDrawer extends AppCompatActivity  {
 
 //
 
+       // add_to_cart_badge.datachange();
 
 
 
@@ -181,7 +182,7 @@ public class MainActivityNavigationDrawer extends AppCompatActivity  {
         View actionView = menuItem.getActionView();
         textCartItemCount = (TextView) actionView.findViewById(R.id.cart_badge_text_view);
 
-        setupBadge();
+    //    setupBadge();
 
         actionView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -279,21 +280,21 @@ public class MainActivityNavigationDrawer extends AppCompatActivity  {
         return super.onOptionsItemSelected(item);
     }
 
-    private void setupBadge() {
-
-        if (textCartItemCount != null) {
-            if (mCartItemCount == 0) {
-                if (textCartItemCount.getVisibility() != View.GONE) {
-                    textCartItemCount.setVisibility(View.GONE);
-                }
-            } else {
-                textCartItemCount.setText(String.valueOf(Math.min(mCartItemCount, 99)));
-                if (textCartItemCount.getVisibility() != View.VISIBLE) {
-                    textCartItemCount.setVisibility(View.VISIBLE);
-                }
-            }
-        }
-    }
+//    private void setupBadge() {
+//
+//        if (textCartItemCount != null) {
+//            if (mCartItemCount == 0) {
+//                if (textCartItemCount.getVisibility() != View.GONE) {
+//                    textCartItemCount.setVisibility(View.GONE);
+//                }
+//            } else {
+//                textCartItemCount.setText(String.valueOf(Math.min(mCartItemCount, 99)));
+//                if (textCartItemCount.getVisibility() != View.VISIBLE) {
+//                    textCartItemCount.setVisibility(View.VISIBLE);
+//                }
+//            }
+//        }
+//    }
 
 
 }

@@ -45,6 +45,11 @@ public class RegisterActivity extends AppCompatActivity {
     static boolean checkImg = false;
     Uri pickedImgUri;
 
+    boolean isalpaFound = false;
+    boolean isSpecialCharFound = false;
+    boolean isNumericFound = false;
+
+
     Button btnEnterasGuest ;
 
     private EditText userEmail, userPassword, userConfirmPassword, userName;
@@ -96,11 +101,16 @@ public class RegisterActivity extends AppCompatActivity {
                 final String name = userName.getText().toString();
 
 
+
+
+
                 if (email.isEmpty() || name.isEmpty() || password.isEmpty() || !password.equals(password2)) {
 
 
                     //   something goes wrong : all fields must be filled
                     // we need to display an error message
+
+
                     showMessage("Please Verify all fields");
                     //  regBtn.setVisibility(View.VISIBLE);
                    //  loadingProgress.setVisibility(View.INVISIBLE);
@@ -111,6 +121,49 @@ public class RegisterActivity extends AppCompatActivity {
                 } else {
                     // everything is ok and all fields are filled now we can start creating user account
                     // CreateUserAccount method will try to create the user if the email is valid
+
+                    // password Modulation..
+
+                    if(password.length() == 8){
+
+                        // aphanumeric check || 1 Special char Check
+
+                        loop: for(int i =0 ; i < password.length();i++){
+
+                            char c = password.charAt(i);
+
+                            if(c  >= ' ' && c <= '/' || c  >= '{' && c <= '~' || c  >= '[' && c <= '`' || c  >= ':' && c <= '@' ) isSpecialCharFound = true;
+
+                            if( c >= '0' && c <='9') isNumericFound = true;
+
+                            if(c >= 'A' && c <= 'z') isalpaFound = true;
+
+                            if(isalpaFound == true && isNumericFound == true && isSpecialCharFound == true) break loop;
+                        }
+
+                        if(isSpecialCharFound == false){
+                            showMessage("Special Char Not Found");
+                        }else if(isNumericFound == false){
+                            showMessage("Number not found");
+                        }else if(isalpaFound == false){
+                            showMessage("Apha character Not found");
+                        }else{
+                          //  showMessage("Password Set Sucessfully");
+                            isalpaFound = false;
+                            isNumericFound = false;
+                            isSpecialCharFound = false;
+                        }
+
+
+                    }else{
+                        if(password.length() < 8)
+                            showMessage("passord is too short");
+                        else
+                            showMessage("password is too long");
+                    }
+
+                    // password modulation end code
+
                     CreateUserAccount(email, name, password);
                 }
 
@@ -229,7 +282,6 @@ public class RegisterActivity extends AppCompatActivity {
         Intent homeActivity = new Intent(getApplicationContext(), MainActivityNavigationDrawer.class);
         startActivity(homeActivity);
         finish();
-
 
     }
 
