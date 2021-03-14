@@ -1,40 +1,34 @@
 package com.example.intoductionpart;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.view.Gravity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Menu;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.bumptech.glide.Glide;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
-import com.example.intoductionpart.ui.gallery.GalleryFragment;
-import com.example.intoductionpart.ui.slideshow.SlideshowFragment;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
-import androidx.annotation.NonNull;
-import androidx.core.view.GravityCompat;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,10 +40,11 @@ public class MainActivityNavigationDrawer extends AppCompatActivity  {
     FirebaseUser currentUser ;
     FirebaseAuth mAuth;
 
+    add_to_cart obj;
     TextView textCartItemCount,viewAll1,viewAll2,viewAll3;
     int mCartItemCount = 0;
-
     private DrawerLayout drawer;
+    SwipeRefreshLayout srl;
 
 
     @Override
@@ -59,16 +54,21 @@ public class MainActivityNavigationDrawer extends AppCompatActivity  {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+//        srl = findViewById(R.id.swipeRefreshLayout_in_main);
+//        srl.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+//            @Override
+//            public void onRefresh() {
+//                datachange();
+//            }
+//        });
 //
 
-       // add_to_cart_badge.datachange();
-
+        // add_to_cart_badge.datachange();
 
 
         mAuth = FirebaseAuth.getInstance();
 
-        currentUser =  mAuth.getCurrentUser();
+        currentUser = mAuth.getCurrentUser();
 
 //        FloatingActionButton fab = findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {
@@ -154,6 +154,8 @@ public class MainActivityNavigationDrawer extends AppCompatActivity  {
         });
 
 
+        datachange();
+
     }
 
 
@@ -171,27 +173,8 @@ public class MainActivityNavigationDrawer extends AppCompatActivity  {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-       // getMenuInflater().inflate(R.menu.main_activity_navigation_drawer, menu);
-
 
         getMenuInflater().inflate(R.menu.main_activity_navigation_drawer, menu);
-
-        final MenuItem menuItem = menu.findItem(R.id.action_drawer_cart);
-
-        View actionView = menuItem.getActionView();
-        textCartItemCount = (TextView) actionView.findViewById(R.id.cart_badge_text_view);
-
-    //    setupBadge();
-
-        actionView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onOptionsItemSelected(menuItem);
-            }
-        });
-
-
 
         return true;
     }
@@ -267,34 +250,50 @@ public class MainActivityNavigationDrawer extends AppCompatActivity  {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        switch (item.getItemId()) {
-
-            case R.id.action_drawer_cart: {
-                // Do something
-                Intent intent = new Intent(this,add_to_cart.class);
-                startActivity(intent);
-
-                return true;
-            }
-        }
         return super.onOptionsItemSelected(item);
     }
 
-//    private void setupBadge() {
-//
-//        if (textCartItemCount != null) {
-//            if (mCartItemCount == 0) {
-//                if (textCartItemCount.getVisibility() != View.GONE) {
-//                    textCartItemCount.setVisibility(View.GONE);
-//                }
-//            } else {
-//                textCartItemCount.setText(String.valueOf(Math.min(mCartItemCount, 99)));
-//                if (textCartItemCount.getVisibility() != View.VISIBLE) {
-//                    textCartItemCount.setVisibility(View.VISIBLE);
-//                }
-//            }
-//        }
-//    }
+    public void datachange() {
+
+
+        FirebaseDatabase.getInstance().getReference().child("login_detail")
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            String toaddOverdatabaseList = snapshot.child("idDatabase").getValue().toString();
+                            String str = snapshot.child("price").getValue().toString();
+                            mCartItemCount = mCartItemCount + 1;
+                        }
+
+                        setupBadge();
+                        mCartItemCount = 0;
+
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+
+    }
+
+    private void setupBadge() {
+
+        if (textCartItemCount != null) {
+            if (mCartItemCount == 0) {
+                if (textCartItemCount.getVisibility() != View.GONE) {
+                    textCartItemCount.setVisibility(View.GONE);
+                }
+            } else {
+                textCartItemCount.setText(String.valueOf(Math.min(mCartItemCount, 99)));
+                if (textCartItemCount.getVisibility() != View.VISIBLE) {
+                    textCartItemCount.setVisibility(View.VISIBLE);
+                }
+            }
+        }
+    }
 
 
 }

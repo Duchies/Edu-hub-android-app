@@ -30,7 +30,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 import org.w3c.dom.Text;
-
+////////////////////////////////////////////////////main class////////////////////////
 public class Sign_up extends AppCompatActivity {
 
     private static final int RC_SIGN_IN = 123 ;
@@ -39,7 +39,7 @@ public class Sign_up extends AppCompatActivity {
     private ProgressBar loginProgressBar;
     private FirebaseAuth mAuth;
     private Intent HomeActivity;
-    TextView googleBtn ;
+    TextView googleBtn;
     private GoogleSignInClient mGoogleSignInClient;
 
     // private ImageView imageView;
@@ -68,9 +68,6 @@ public class Sign_up extends AppCompatActivity {
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         googleBtn = findViewById(R.id.googleSignIn);
-
-
-
         googleBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

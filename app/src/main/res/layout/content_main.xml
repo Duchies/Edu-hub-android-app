@@ -11,6 +11,8 @@
     tools:showIn="@layout/app_bar_main">
 
 
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -111,6 +113,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
                                 android:layout_marginTop="8dp"
                                 android:fontFamily="@font/roboto_regular"
                                 android:gravity="center"
@@ -138,6 +141,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
                                 android:layout_marginTop="8dp"
                                 android:fontFamily="@font/roboto_regular"
                                 android:gravity="center"
@@ -166,6 +170,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_marginTop="8dp"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
                                 android:fontFamily="@font/roboto_regular"
                                 android:gravity="center"
                                 android:text="Bag" />
@@ -193,6 +198,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
                                 android:layout_marginTop="8dp"
                                 android:fontFamily="@font/roboto_regular"
                                 android:gravity="center"
@@ -221,6 +227,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_marginTop="8dp"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
                                 android:fontFamily="@font/roboto_regular"
                                 android:gravity="center"
                                 android:text="Novel" />
@@ -248,6 +255,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_marginTop="8dp"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
                                 android:fontFamily="@font/roboto_regular"
                                 android:gravity="center"
                                 android:text="Shoes" />
@@ -274,6 +282,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
                                 android:layout_marginTop="8dp"
                                 android:fontFamily="@font/roboto_regular"
                                 android:gravity="center"
@@ -301,6 +310,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
                                 android:layout_marginTop="8dp"
                                 android:fontFamily="@font/roboto_regular"
                                 android:gravity="center"
@@ -400,7 +410,7 @@
                                 android:fontFamily="@font/roboto_regular"
                                 android:text="Skybag blue"
 
-                                android:textColor="@color/lightDarkBlack"
+                                android:textColor="@color/textSecondary"
                                 android:textSize="14dp" />
 
                             <TextView
@@ -408,8 +418,8 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_regular"
                                 android:text="@string/twentyOFf"
-                                android:textSize="14dp"
 
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
                                 android:textColor="@color/greenLight"
                                 />
 
@@ -438,7 +448,7 @@
                                 android:fontFamily="@font/roboto_regular"
                                 android:text="Skybag Darkblue"
 
-                                android:textColor="@color/lightDarkBlack"
+                                android:textColor="@color/textSecondary"
                                 android:textSize="14dp" />
 
                             <TextView
@@ -446,7 +456,8 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_regular"
                                 android:text="@string/fourtyOff"
-                                android:textSize="14dp"
+
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
                                 android:textColor="@color/greenLight"
                                 />
 
@@ -541,7 +552,7 @@
                                 android:layout_marginBottom="2dp"
                                 android:fontFamily="@font/roboto_regular"
                                 android:text="Mac Pro "
-                                android:textColor="@color/lightDarkBlack"
+                                android:textColor="@color/textSecondary"
                                 android:textSize="14dp" />
 
                             <TextView
@@ -549,7 +560,8 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_regular"
                                 android:text="@string/fourtyOff"
-                                android:textSize="14dp"
+
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
                                 android:textColor="@color/greenLight"
 
                                 />
@@ -579,7 +591,7 @@
                                 android:layout_marginBottom="2dp"
                                 android:fontFamily="@font/roboto_regular"
                                 android:text="Watch "
-                                android:textColor="@color/lightDarkBlack"
+                                android:textColor="@color/textSecondary"
                                 android:textSize="14dp" />
 
                             <TextView
@@ -587,8 +599,9 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_regular"
                                 android:text="@string/twentyOFf"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
                                 android:textColor="@color/greenLight"
-                                android:textSize="14dp" />
+                                />
 
 
 
@@ -618,7 +631,7 @@
                                 android:layout_marginBottom="2dp"
                                 android:fontFamily="@font/roboto_regular"
                                 android:text="Simple Bag"
-                                android:textColor="@color/lightDarkBlack"
+                                android:textColor="@color/textSecondary"
                                 android:textSize="14dp" />
 
                             <TextView
@@ -626,7 +639,8 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_regular"
                                 android:text="@string/twentyOFf"
-                                android:textSize="14dp"
+
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
                                 android:textColor="@color/greenLight"
 
 
@@ -725,7 +739,7 @@
                                 android:layout_marginBottom="2dp"
                                 android:fontFamily="@font/roboto_regular"
                                 android:text="Blue Dell "
-                                android:textColor="@color/lightDarkBlack"
+                                android:textColor="@color/textSecondary"
                                 android:textSize="14dp" />
 
                             <TextView
@@ -733,7 +747,8 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_regular"
                                 android:text="@string/twentyOFf"
-                                android:textSize="14dp"
+
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
                                 android:textColor="@color/greenLight"
 
 
@@ -764,7 +779,7 @@
                                 android:layout_marginBottom="2dp"
                                 android:fontFamily="@font/roboto_regular"
                                 android:text="Dell Silver Yoga"
-                                android:textColor="@color/lightDarkBlack"
+                                android:textColor="@color/textSecondary"
                                 android:textSize="14dp" />
 
                             <TextView
@@ -772,7 +787,8 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_regular"
                                 android:text="@string/fourtyOff"
-                                android:textSize="14dp"
+
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
                                 android:textColor="@color/greenLight"
 
 
@@ -804,6 +820,8 @@
 
 
         </LinearLayout>
+
+
 
     </ScrollView>
 
