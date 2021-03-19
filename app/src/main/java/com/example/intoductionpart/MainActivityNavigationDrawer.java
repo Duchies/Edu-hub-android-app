@@ -110,13 +110,11 @@ public class MainActivityNavigationDrawer extends AppCompatActivity  {
         ImageSlider imageSlider  = (ImageSlider) findViewById(R.id.slider);
         List<SlideModel> slideModels  = new ArrayList<>();
 
-        slideModels.add(new SlideModel("https://raw.githubusercontent.com/Duchies/PhotoResources/master/banner2.png", ScaleTypes.FIT));
-        slideModels.add(new SlideModel("https://raw.githubusercontent.com/Duchies/PhotoResources/master/banner1.png",ScaleTypes.FIT));
-        slideModels.add(new SlideModel("https://raw.githubusercontent.com/Duchies/PhotoResources/master/banner6.jpg",ScaleTypes.FIT));
+        slideModels.add(new SlideModel("https://raw.githubusercontent.com/Duchies/PhotoResources/master/banner1.jpg", ScaleTypes.FIT));
+        slideModels.add(new SlideModel("https://raw.githubusercontent.com/Duchies/PhotoResources/master/ban3.png",ScaleTypes.FIT));
+        slideModels.add(new SlideModel("https://raw.githubusercontent.com/Duchies/PhotoResources/master/ban1.png",ScaleTypes.FIT));
 //        slideModels.add(new SlideModel("https://rukminim1.flixcart.com/image/880/1056/jp5sknk0/backpack/3/x/e/hp0008-ezhp0008-laptop-backpack-hp-original-imafbgmyv4ymwbkb.jpeg?q=50","title 4",ScaleTypes.FIT));
-        slideModels.add(new SlideModel("https://raw.githubusercontent.com/Duchies/PhotoResources/master/banner5.jpg",ScaleTypes.FIT));
-
-
+        slideModels.add(new SlideModel("https://raw.githubusercontent.com/Duchies/PhotoResources/master/ban4.jpg",ScaleTypes.FIT));
 
         imageSlider.setImageList(slideModels,ScaleTypes.FIT);
 
@@ -295,5 +293,18 @@ public class MainActivityNavigationDrawer extends AppCompatActivity  {
         }
     }
 
+    // drawer methods ..
+    public void feedbackMethod(MenuItem item) {
 
+        Intent intent = new Intent(this,feedback.class);
+        startActivity(intent);
+
+
+    }
+
+    public void goToCartClass(MenuItem item) {
+
+        Intent intent = new Intent(this,add_to_cart.class);
+        startActivity(intent);
+    }
 }
