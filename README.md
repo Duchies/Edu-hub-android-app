@@ -9,8 +9,7 @@
  - firebase database -> saving data ,retriving data , relating data, fetching relating data , delete data . 
  
  - like/dislike  -> using like button item added to cart and dislike will remove your item from cart 
- 
- - 
+
  - sign in / sign up  ->Google Account or by manual registration with password Modulation .
  
  - Introduction screens 
